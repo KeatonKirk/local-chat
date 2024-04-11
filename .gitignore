@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+env/
+venv/
+backend/chatbot/
+
+# Other files and folders to ignore
+.idea/
+.vscode/
+*.swp
+*.swo
+*.DS_Store

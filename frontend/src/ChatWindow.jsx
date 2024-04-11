@@ -67,13 +67,14 @@ const ChatWindow = () => {
         } */}
 
         {
-            testMessages.map((msg, index) =>{
+            testMessages.map((msg, index) => {
+                console.log(msg)
                 const messageText = msg.content
                 const role = msg.role
 
                 return (
                     <>
-                        <p>{role}</p>
+                        <h3>{role}</h3>
                         <p>{messageText}</p>
                     </>
                 )

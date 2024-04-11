@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 
-
 const ChatWindow = () => {
     const [message, setMessage] = useState('')
     const [response, setResponse] = useState('')
@@ -11,6 +10,25 @@ const ChatWindow = () => {
         setMessage(message)
         console.log(message)
     }
+
+    const testMessages = [
+        {
+            role: "AI",
+            content: "Hello! How can I help you today?"
+        },
+        {
+            role: "user",
+            content: "I need to build a React application, can you help me?"
+        },
+        {
+            role: "AI",
+            content: "Sure! First you should start by ensuring you have npm installed on your machine, then you can run the command npx create-react-app to get started!"
+        },
+        {
+            role: "user",
+            content: "Great, thankss breezy lemon squeezy!"
+        }
+    ]
 
 
     // send message text to backend
@@ -36,14 +54,30 @@ const ChatWindow = () => {
         setResponse(final)
 
     }
-    
+
     return (
         <>
         <input onChange={onChange}/>
         <button onClick={onClick}>Send</button>
+        {/* 
+        the stuff below is how we actually get responses from the AI. for now it's commented out
         {
             response &&
             <p>{response}</p>
+        } */}
+
+        {
+            testMessages.map((msg, index) =>{
+                const messageText = msg.content
+                const role = msg.role
+
+                return (
+                    <>
+                        <p>{role}</p>
+                        <p>{messageText}</p>
+                    </>
+                )
+            } )
         }
         </>
     )
